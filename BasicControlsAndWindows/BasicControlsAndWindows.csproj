@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>4895d87c-a1f8-4b7b-ae9e-4f7653c427b0</ProjectGuid>
+    <ProjectGuid>{4895D87C-A1F8-4B7B-AE9E-4F7653C427B0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BasicControlsAndWindows</RootNamespace>
@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,26 +30,61 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="CommonBasicStandardLibraries, Version=1.0.35.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonBasicStandardLibraries.1.0.36\lib\netstandard2.0\CommonBasicStandardLibraries.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BasicWindows\BasicConverters\CurrencyConverter.cs" />
+    <Compile Include="BasicWindows\BasicConverters\DateConverter.cs" />
+    <Compile Include="BasicWindows\BasicConverters\TrueFalseConverter.cs" />
+    <Compile Include="BasicWindows\BasicConverters\VisibilityConverter.cs" />
+    <Compile Include="BasicWindows\BasicConverters\ZeroConverter.cs" />
+    <Compile Include="BasicWindows\Misc\BlankPersonal.cs" />
+    <Compile Include="BasicWindows\Misc\IPersonalSetting.cs" />
+    <Compile Include="BasicWindows\Misc\IUISetting.cs" />
+    <Compile Include="BasicWindows\Misc\WindowHelper.cs" />
+    <Compile Include="BasicWindows\Windows\BasicWindow.cs" />
+    <Compile Include="BasicWindows\Windows\PlainWindow.cs" />
+    <Compile Include="Controls\BasicControls\Combo.cs" />
+    <Compile Include="Controls\BasicControls\CustomTextbox.cs" />
+    <Compile Include="Controls\BasicControls\MultiLineTextbox.cs" />
+    <Compile Include="Controls\BasicControls\Objects.cs" />
+    <Compile Include="Controls\BasicControls\SimpleReader.cs" />
+    <Compile Include="Controls\Interfaces\Interfaces.cs" />
+    <Compile Include="Helpers\BaseLabelGrid.cs" />
+    <Compile Include="Helpers\ButtonHelperClass.cs" />
+    <Compile Include="Helpers\ButtonListHelper.cs" />
+    <Compile Include="Helpers\DataEntryHelpers.cs" />
+    <Compile Include="Helpers\GridHelper.cs" />
+    <Compile Include="Helpers\ListViewHelperWithGrid.cs" />
+    <Compile Include="Helpers\SimpleControlHelpers.cs" />
+    <Compile Include="Helpers\SimpleLabelList.cs" />
+    <Compile Include="Helpers\WorkProgress.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>
